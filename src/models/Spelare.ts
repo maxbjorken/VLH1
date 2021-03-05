@@ -25,7 +25,7 @@ export class Spelare{
   }
 
   set Alder(a: number) {
-    this.Alder = a;
+    this.alder = a;
   }
 
   get Langd() {

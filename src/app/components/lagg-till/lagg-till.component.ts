@@ -12,10 +12,10 @@ export class LaggTillComponent implements OnInit {
   spelare: Spelare[];
   newSpelare: Spelare = {
     Namn: '',
-    Fattning: 'Original',
-    Alder: null,
-    Langd: null,
-    Position: 'Original'
+    Fattning: '',
+    Alder: 0,
+    Langd: 0,
+    Position: ''
     };
 
 
