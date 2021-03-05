@@ -1,0 +1,31 @@
+<p>lagg-till works!</p>
+
+<form (submit)="onSubmit($event)">
+  <label>Namn </label><br/>
+  <input type="text" [(ngModel)]="newSpelare.Namn" name="Name"><br/><br/>
+
+  <label>Fattning </label>
+  <select name="Fattning" [(ngModel)]="newSpelare.Fattning">
+    <option value="Vänster">Vänster</option>
+    <option value="Höger">Höger</option>
+  </select> <br/><br/>
+
+  <label>Ålder </label>
+  <input type="Alder" [(ngModel)]="newSpelare.Alder"><br/><br/>
+
+  <label>Längd </label>
+  <input type="Langd" [(ngModel)]="newSpelare.Langd"> <br/><br/>
+
+  <label>Position </label>
+  <select name="Position" [(ngModel)]="newSpelare.Position">
+    <option value = "Back">Back</option>
+    <option value = "Målvakt">Målvakt</option>
+    <option value = "Center">Center</option>
+    <option value = "Forward">Forward</option>
+  </select>
+
+
+  <button (click)="addSpelare()" [disabled]="newSpelare.Namn == ''">Lägg till</button>
+</form>
+
+

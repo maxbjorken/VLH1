@@ -18,4 +18,6 @@ export class HockeyspelareComponent implements OnInit {
     this.spelare = this.SpelarService.getSpelare();
   }
 
+
+
 }
