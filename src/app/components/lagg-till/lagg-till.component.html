@@ -1,5 +1,7 @@
 <p>lagg-till works!</p>
 
+
+
 <form (submit)="onSubmit($event)">
   <label>Namn </label><br/>
   <input type="text" [(ngModel)]="newSpelare.Namn" name="Name"><br/><br/>
@@ -11,10 +13,10 @@
   </select> <br/><br/>
 
   <label>Ålder </label>
-  <input type="number" [(ngModel)]="newSpelare.Alder"><br/><br/>
+  <input type="text" [(ngModel)]="newSpelare.Alder" name="Alder"><br/><br/>
 
   <label>Längd </label>
-  <input type="number" [(ngModel)]="newSpelare.Langd"> <br/><br/>
+  <input type="text" [(ngModel)]="newSpelare.Langd" name="Langd"> <br/><br/>
 
   <label>Position </label>
   <select name="Position" [(ngModel)]="newSpelare.Position">
@@ -25,7 +27,8 @@
   </select>
 
 
-  <button (click)="addSpelare()" [disabled]="newSpelare.Namn == ''">Lägg till</button>
+  <button (click)="addSpelare()" >Lägg till</button>
 </form>
+
 
 

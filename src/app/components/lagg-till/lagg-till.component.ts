@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Spelare} from '../../../models/Spelare';
-import {HockeyspelareListaService} from '../../services/hockeyspelare-lista.service';
 import {formatNumber} from '@angular/common';
 
 @Component({
@@ -13,22 +12,32 @@ export class LaggTillComponent implements OnInit {
   newSpelare: Spelare = {
     Namn: '',
     Fattning: '',
-    Alder: 0,
-    Langd: 0,
-    Position: ''
+    Alder: '',
+    Langd: '',
+    Position: '',
     };
 
 
-  constructor(private SpelarService: HockeyspelareListaService) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.spelare = this.SpelarService.getSpelare();
-  }
+    this.spelare = [
+      new Spelare('Emil Pettersson', 'Vänster', '27', '187', 'Center'),
+      new Spelare('Joel Persson', 'Höger', '27', '181', 'Back'),
+      new Spelare('Andrew Calof', 'Höger', '29', '177', 'Forward'),
+      new Spelare('Robert Rosén', 'Höger', '33', '179', 'Center')
+    ];
+   }
 
   addSpelare() {
     this.spelare.push(this.newSpelare);
   }
+
+  getSpelare(): Spelare[] {
+    return this.spelare;
+  }
+
 
   onSubmit(e) {
     e.preventDefault();

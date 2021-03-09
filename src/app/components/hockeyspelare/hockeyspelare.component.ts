@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HockeyspelareListaService } from '../../services/hockeyspelare-lista.service';
+
 import {Spelare} from '../../../models/Spelare';
 import { NgForm} from '@angular/forms';
 
@@ -9,13 +9,13 @@ import { NgForm} from '@angular/forms';
   styleUrls: ['./hockeyspelare.component.css']
 })
 export class HockeyspelareComponent implements OnInit {
-  spelare: Spelare[];
 
-  constructor(private SpelarService: HockeyspelareListaService) {
+
+  constructor() {
   }
 
   ngOnInit() {
-    this.spelare = this.SpelarService.getSpelare();
+
   }
 
 
