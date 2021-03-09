@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {Spelare} from '../../../models/Spelare';
 import {formatNumber} from '@angular/common';
+import {HockeyspelareListaService} from '../../services/hockeyspelare-lista.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-lagg-till',
@@ -17,30 +19,26 @@ export class LaggTillComponent implements OnInit {
     Position: '',
     };
 
+  @ViewChild('hockeyform') formen: any;
 
-  constructor() {
+  constructor(private SpelarService: HockeyspelareListaService) {
+
   }
 
   ngOnInit() {
-    this.spelare = [
-      new Spelare('Emil Pettersson', 'Vänster', '27', '187', 'Center'),
-      new Spelare('Joel Persson', 'Höger', '27', '181', 'Back'),
-      new Spelare('Andrew Calof', 'Höger', '29', '177', 'Forward'),
-      new Spelare('Robert Rosén', 'Höger', '33', '179', 'Center')
-    ];
+this.spelare = this.SpelarService.getSpelare();
    }
 
-  addSpelare() {
-    this.spelare.push(this.newSpelare);
-  }
 
-  getSpelare(): Spelare[] {
-    return this.spelare;
-  }
+  onSubmit({value, valid}: {value: Spelare, valid: boolean}) {
+    if (!valid) {
+      console.log('nej');
+    }
+    else {
+      this.spelare.push(value);
+      this.formen.reset();
+    }
 
-
-  onSubmit(e) {
-    e.preventDefault();
   }
 
 }

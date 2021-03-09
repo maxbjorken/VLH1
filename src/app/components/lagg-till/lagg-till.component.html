@@ -1,8 +1,7 @@
 <p>lagg-till works!</p>
 
 
-
-<form (submit)="onSubmit($event)">
+<form #hockeyform="ngForm" (ngSubmit)="onSubmit(hockeyform)">
   <label>Namn </label><br/>
   <input type="text" [(ngModel)]="newSpelare.Namn" name="Name"><br/><br/>
 
@@ -27,7 +26,7 @@
   </select>
 
 
-  <button (click)="addSpelare()" >Lägg till</button>
+  <button (click)=hockeyform.form.valid >Lägg till</button>
 </form>
 
 

@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-/*
+
 import { HockeyspelareListaService } from './hockeyspelare-lista.service';
 
 describe('HockeyspelareListaService', () => {
@@ -15,4 +15,3 @@ describe('HockeyspelareListaService', () => {
   });
 });
 
- */
