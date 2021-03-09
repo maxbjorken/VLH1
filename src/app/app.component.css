@@ -5,3 +5,34 @@
   width: 200px;
 
 }
+.bak {
+  background-image: url("../assets/images/4k-vaxjo-lakers-grunge-hockey-club-shl.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.text {
+  color: greenyellow;
+  font-size: xxx-large;
+}
+
+
+.button{
+
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.btn{
+  border: 1px solid #fff;
+  padding: 10px 30px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.btn:hover {
+  background-color: white;
+  color: black;
+}

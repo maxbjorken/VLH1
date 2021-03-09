@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  background-image: url("assets/images/4k-vaxjo-lakers-grunge-hockey-club-shl.jpg");
+  height: 700px;
+  background-size: cover;
+  background-position: center;
+
+}
+
+.knapp {
+  height: 50px;
+  border: 1px solid #fff;
+  padding: 10px 30px;
+  text-decoration: none;
+  text-decoration-color: white;
+}
+
+.knapp:hover {
+  background-color: darkblue;
+  color: black;
+}
+
+.text {
+  color: whitesmoke;
+  font-size: xx-large;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+
+  font-weight: bolder;
+
+}
