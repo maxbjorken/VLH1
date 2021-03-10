@@ -16,6 +16,7 @@ html {
   padding: 10px 30px;
   text-decoration: none;
   text-decoration-color: white;
+  font-size: large;
 }
 
 .knapp:hover {

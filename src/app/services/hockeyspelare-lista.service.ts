@@ -13,14 +13,15 @@ spelare: Spelare[];
     Alder: '',
     Langd: '',
     Position: '',
+    VisaInfo: false,
   };
 
   constructor() {
     this.spelare = [
-      new Spelare('Emil Pettersson', 'Vänster', '27', '187', 'Center'),
-      new Spelare('Joel Persson', 'Höger', '27', '181', 'Back'),
-      new Spelare('Andrew Calof', 'Höger', '29', '177', 'Forward'),
-      new Spelare('Robert Rosén', 'Höger', '33', '179', 'Center')
+      new Spelare('Emil Pettersson', 'Vänster', '27', '187', 'Center', false),
+      new Spelare('Joel Persson', 'Höger', '27', '181', 'Back', false),
+      new Spelare('Andrew Calof', 'Höger', '29', '177', 'Forward', false),
+      new Spelare('Robert Rosén', 'Höger', '33', '179', 'Center', false)
   ];
   }
 
@@ -31,6 +32,7 @@ spelare: Spelare[];
   addSpelare(e) {
     this.spelare.push(e);
   }
+
 
 }
 

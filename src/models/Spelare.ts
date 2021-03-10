@@ -1,7 +1,7 @@
 export class Spelare{
 
   constructor(private namn?: string, private fattning?: string, private alder?: string,
-              private langd?: string, private position?: string ) {
+              private langd?: string, private position?: string, private visaInfo?: boolean) {
   }
 
   get Namn() {
@@ -42,6 +42,14 @@ export class Spelare{
 
   set Position(p: string) {
     this.position = p;
+  }
+
+  get VisaInfo() {
+    return this.visaInfo;
+  }
+
+  set VisaInfo(p: boolean) {
+    this.visaInfo = p;
   }
 
 }

@@ -17,6 +17,7 @@ export class LaggTillComponent implements OnInit {
     Alder: '',
     Langd: '',
     Position: '',
+    VisaInfo: false
     };
 
   @ViewChild('hockeyform') formen: any;

@@ -19,6 +19,9 @@ export class HockeyspelareComponent implements OnInit {
     this.spelare = this.SpelarService.getSpelare();
   }
 
+  visaInfo(s: Spelare) {
+    s.VisaInfo = !s.VisaInfo;
+  }
 
 
 

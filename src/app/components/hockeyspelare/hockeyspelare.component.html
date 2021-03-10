@@ -3,8 +3,9 @@
 
 <ul>
   <li *ngFor="let s of spelare">
-    {{ s.Namn }} har {{s.Fattning}}fattning. Åldern är {{s.Alder}}, personens längd är {{s.Langd}} och positionen är {{s.Position}}
-
+    {{ s.Namn }}
+<span *ngIf="s.VisaInfo">   | Fattning: {{s.Fattning}}. Ålder: {{s.Alder}}. Längd: {{s.Langd}}cm. Position: {{s.Position}}</span>
+    <input type="button" value="Visa info!" (click)="visaInfo(s)"/>
   </li>
 
 </ul>
