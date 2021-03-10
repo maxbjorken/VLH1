@@ -41,4 +41,6 @@ this.spelare = this.SpelarService.getSpelare();
 
   }
 
+
+
 }
