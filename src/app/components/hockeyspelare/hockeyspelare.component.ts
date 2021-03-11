@@ -11,12 +11,15 @@ import { NgForm} from '@angular/forms';
 export class HockeyspelareComponent implements OnInit {
   spelare: Spelare[];
 
+
   constructor(private SpelarService: HockeyspelareListaService) {
   }
 
   ngOnInit() {
     this.spelare = this.SpelarService.getSpelare();
   }
+
+
 
 
 

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {Spelare} from '../../../models/Spelare';
-import {HockeyspelareListaService} from '../../services/hockeyspelare-lista.service';
 import {formatNumber} from '@angular/common';
+import {HockeyspelareListaService} from '../../services/hockeyspelare-lista.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-lagg-till',
@@ -13,25 +14,31 @@ export class LaggTillComponent implements OnInit {
   newSpelare: Spelare = {
     Namn: '',
     Fattning: '',
-    Alder: 0,
-    Langd: 0,
-    Position: ''
+    Alder: '',
+    Langd: '',
+    Position: '',
     };
 
+  @ViewChild('hockeyform') formen: any;
 
   constructor(private SpelarService: HockeyspelareListaService) {
+
   }
 
   ngOnInit() {
-    this.spelare = this.SpelarService.getSpelare();
-  }
+this.spelare = this.SpelarService.getSpelare();
+   }
 
-  addSpelare() {
-    this.spelare.push(this.newSpelare);
-  }
 
-  onSubmit(e) {
-    e.preventDefault();
+  onSubmit({value, valid}: {value: Spelare, valid: boolean}) {
+    if (!valid) {
+      console.log('nej');
+    }
+    else {
+      this.spelare.push(value);
+      this.formen.reset();
+    }
+
   }
 
 }

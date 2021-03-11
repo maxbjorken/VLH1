@@ -1,7 +1,7 @@
 export class Spelare{
 
-  constructor(private namn?: string, private fattning?: string, private alder?: number,
-              private langd?: number, private position?: string ) {
+  constructor(private namn?: string, private fattning?: string, private alder?: string,
+              private langd?: string, private position?: string ) {
   }
 
   get Namn() {
@@ -24,7 +24,7 @@ export class Spelare{
     return this.alder;
   }
 
-  set Alder(a: number) {
+  set Alder(a: string) {
     this.alder = a;
   }
 
@@ -32,7 +32,7 @@ export class Spelare{
     return this.langd;
   }
 
-  set Langd(l: number) {
+  set Langd(l: string) {
     this.langd = l;
   }
 
