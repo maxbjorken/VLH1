@@ -3,6 +3,8 @@ import {Spelare} from '../../../models/Spelare';
 import {formatNumber} from '@angular/common';
 import {HockeyspelareListaService} from '../../services/hockeyspelare-lista.service';
 import { NgForm } from '@angular/forms';
+import {Observable} from 'rxjs';
+import { of  } from 'rxjs';
 
 @Component({
   selector: 'app-lagg-till',
@@ -18,30 +20,25 @@ export class LaggTillComponent implements OnInit {
     Langd: '',
     Position: '',
     VisaInfo: false
-    };
+  };
 
   @ViewChild('hockeyform') formen: any;
 
   constructor(private SpelarService: HockeyspelareListaService) {
-
   }
 
   ngOnInit() {
-this.spelare = this.SpelarService.getSpelare();
    }
 
 
   onSubmit({value, valid}: {value: Spelare, valid: boolean}) {
     if (!valid) {
-      console.log('nej');
+      alert('Ajajaj Haase');
     }
     else {
-      this.spelare.push(value);
+      this.SpelarService.addSpelare(value);
       this.formen.reset();
     }
 
   }
-
-
-
 }

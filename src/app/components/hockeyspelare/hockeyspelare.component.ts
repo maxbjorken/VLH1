@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HockeyspelareListaService } from '../../services/hockeyspelare-lista.service';
 import {Spelare} from '../../../models/Spelare';
 import { NgForm} from '@angular/forms';
+import {Observable} from 'rxjs';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-hockeyspelare',
@@ -16,7 +18,9 @@ export class HockeyspelareComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.spelare = this.SpelarService.getSpelare();
+    this.SpelarService.getSpelare().subscribe(j => {
+      this.spelare = j;
+    });
   }
 
   visaInfo(s: Spelare) {

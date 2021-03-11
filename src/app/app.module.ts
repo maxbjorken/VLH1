@@ -9,19 +9,30 @@ import {RouterModule} from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 
+import {  AngularFireModule } from '@angular/fire';
+import {  environment } from '../environments/environment';
+import {  AngularFirestoreModule } from '@angular/fire/firestore';
+import {  AngularFireAuthModule } from '@angular/fire/auth';
+import { LoginComponent } from './components/login/login.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HockeyspelareComponent,
     LaggTillComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         RouterModule,
-      FormsModule
+      FormsModule,
+      AngularFireModule.initializeApp(environment.firebase),
+      AngularFirestoreModule,
+      AngularFireAuthModule
     ],
   providers: [],
   bootstrap: [AppComponent]

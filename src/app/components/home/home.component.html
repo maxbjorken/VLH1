@@ -2,7 +2,10 @@
 
   Detta är startsidan för Max och Antons Angular-hemsida! <br>
   Välj ditt val uppe i menyn!
-
 </div>
 
+<!---   <div *ngIf="isLoggedIn">   <a href="#" (click)="onLogutClick()">Logut {{ loggedInUser}}</a> <br/> </div> !--->
+<!--- <div *ngIf="!isLoggedIn"> <a routerLink="/login">Login</a>  <br/>   </div> !--->
 
+<button *ngIf="isLoggedIn" routerLink="/" (click)="onLogutClick()"> Logga ut! </button>
+<button *ngIf="!isLoggedIn" routerLink="/login" > Logga in! </button>
